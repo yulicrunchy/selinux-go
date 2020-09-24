@@ -881,9 +881,6 @@ func roFileLabel() string {
 }
 
 func openContextFile() (*os.File, error) {
-	if f, err := os.Open(contextFile); err == nil {
-		return f, nil
-	}
 	lxcPath := filepath.Join(getSELinuxPolicyRoot(), "/contexts/lxc_contexts")
 	return os.Open(lxcPath)
 }
